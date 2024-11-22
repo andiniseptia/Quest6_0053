@@ -26,5 +26,19 @@ fun SplashView(onMulaiButton: () -> Unit){
             .background(color = colorResource(R.color.primary)),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
-    )
+    ) {
+        Image(
+            painter = painterResource(R.drawable.logoumy),
+            contentDescription = null,
+            modifier = Modifier.size(150.dp)
+        )
+        Spacer(
+            modifier = Modifier.padding(16.dp)
+        )
+        Button(
+            onClick = onMulaiButton
+        ) {
+            Text("Mulai")
+        }
+    }
 }
