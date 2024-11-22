@@ -64,7 +64,27 @@ fun TampilView(
                 )
             }
         }
+        Spacer(modifier = Modifier.padding(top = 16.dp))
+        Box(
+            modifier = Modifier
+                .background(
+                    color = Color.White,
+                    shape = RoundedCornerShape(
+                        topEnd = 15.dp,
+                        topStart = 15.dp
+                    )
+                )
+                .fillMaxSize(),
+        ) {
+            val listDataTampil = listOf(
+                Pair("NIM", mahasiswa.nim),
+                Pair("Nama", mahasiswa.nama),
+                Pair("Email", mahasiswa.email),
+                Pair("Mata Kuliah", rencanaStudy.mataKuliah),
+                Pair("Kelas", rencanaStudy.kelas)
+            )
 
+        }
     }
 }
 
