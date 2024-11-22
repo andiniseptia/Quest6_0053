@@ -62,6 +62,13 @@ fun PengelolaHalaman(
                 }
             )
         }
-
+        composable(route = Halaman.Tampil.name){
+            TampilView(
+                mahasiswa = mahasiswaUiState,
+                rencanaStudy = krsViewModel.krsStateUi.collectAsState().value,
+                onBackToMainClicked = { navController.navigate(Halaman.Splash.name)
+                }
+            )
+        }
     }
 }
