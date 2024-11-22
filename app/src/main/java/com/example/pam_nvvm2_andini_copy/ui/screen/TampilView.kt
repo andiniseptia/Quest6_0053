@@ -84,7 +84,26 @@ fun TampilView(
                 Pair("Kelas", rencanaStudy.kelas)
             )
 
-           }
+            Column (
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp)
+            ) {
+                listDataTampil.forEach { item ->
+                    CardSection(
+                        judulParam = item.first,
+                        isiParam = item.second
+                    )
+                }
+                ElevatedButton(
+                    onClick = { onBackToMainClicked() },
+                    modifier = Modifier.padding(bottom = 16.dp),
+
+                    ) {
+                    Text("Selesai")
+                }
+            }
+        }
     }
 }
 
