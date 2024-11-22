@@ -30,4 +30,11 @@ fun PengelolaHalaman(
     mahasiswaViewModel: MahasiswaViewModel = viewModel(),
     krsViewModel: RencanaStudyViewModel = viewModel(),
     navController: NavHostController = rememberNavController()
-)
+) {
+    val mahasiswaUiState by mahasiswaViewModel.mahasiswaUiState.collectAsState()
+    NavHost(
+        navController = navController,
+        startDestination = Halaman.Splash.name,
+        modifier = Modifier.padding()
+    )
+}
