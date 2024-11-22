@@ -139,12 +139,12 @@ fun RencanaStudyView(
                     fontWeight = FontWeight.Light
                 )
                 Spacer(modifier = Modifier.padding(8.dp))
-                Row(
+                Row (
                     modifier = Modifier.fillMaxWidth(),
                     horizontalArrangement = Arrangement.Absolute.SpaceEvenly
                 ) {
                     RuangKelas.listKelas.forEach { data ->
-                        Row(verticalAlignment = Alignment.CenterVertically) {
+                        Row (verticalAlignment = Alignment.CenterVertically){
                             RadioButton(
                                 selected = pilihanKelas == data,
                                 onClick = { pilihanKelas = data }
@@ -153,6 +153,22 @@ fun RencanaStudyView(
                         }
                     }
                 }
+                Spacer(modifier = Modifier.padding(8.dp))
+                HorizontalDivider()
+                Spacer(modifier = Modifier.padding(8.dp))
+                Text(text = "Klausul Persetujuan Mahasiswa", fontWeight = FontWeight.Bold)
+                Row (verticalAlignment = Alignment.CenterVertically) {
+                    Checkbox(
+                        checked = checked,
+                        onCheckedChange = { checked = it },
+                        enabled = chosenDropdown.isNotBlank() && pilihanKelas.isNotBlank()
+                    )
+                    Text(
+                        text = "Saya menyetujui setiap pernyataan yang ada tanpa paksaan dari pihak manapun",
+                        fontWeight = FontWeight.Light, fontSize = 10.sp
+                    )
+                }
+
             }
         }
     }
